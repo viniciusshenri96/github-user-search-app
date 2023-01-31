@@ -1,6 +1,9 @@
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
 @use "../core/typography" as *;
+@use "../core/variables" as *;
+
+$color-hover-button-mode: #222731;
 
 body {
   @include container;
@@ -23,8 +26,170 @@ body {
   }
 
   &__mode {
+    border: none;
+    background: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: rem(16);
+
+    &-text {
+      @include font-s;
+      letter-spacing: rem(2.5);
+      color: var(--color-light-fifth);
+      font-weight: var(--fw-bold);
+      text-transform: uppercase;
+    }
+    &-text,
+    svg path {
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover {
+      .header__mode-text,
+      svg path {
+        fill: $color-hover-button-mode;
+        color: $color-hover-button-mode;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 100%;
+  &__search {
+    display: grid;
+    margin-bottom: rem(24);
+    img {
+      z-index: 1;
+      grid-area: 1 / -1;
+      align-self: center;
+      padding: rem(23) rem(24) rem(23) rem(32);
+    }
+    .search {
+      font: var(--fw-regular) rem(18) / var(--lh-search) $font-1;
+      grid-area: 1 / -1;
+      max-width: 100%;
+      padding: rem(22) rem(140) rem(22) rem(80);
+      border-radius: rem(15);
+      border: none;
+      box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
+      &::placeholder {
+        font: var(--fw-regular) rem(18) / var(--lh-search) $font-1;
+        color: var(--color-light-fourth);
+      }
+    }
+
+    .button__box {
+      grid-area: 1 / -1;
+      justify-self: end;
+      padding: rem(9.5) rem(10) rem(9.5) rem(24);
+    }
+  }
+  &__box {
+    padding: rem(48);
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    background-color: var(--color-light-first);
+    border-radius: rem(15);
+    .content__info {
+      display: grid;
+      grid-template-columns: max-content 1fr 1fr;
+
+      .content__photo {
+        background: red;
+        width: rem(117);
+        height: rem(117);
+        border-radius: 100%;
+        grid-row: span 3;
+        margin-right: rem(37);
+      }
+      .content__bio {
+        // display: flex;
+        grid-column: span 2;
+        margin-bottom: rem(32);
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+
+        .content__name {
+          @include font-xl;
+          color: var(--color-light-third);
+        }
+
+        .content__user {
+          @include font-m;
+          grid-column: 1;
+          color: var(--color-light-sixth);
+        }
+        .content__date {
+          font: var(--fw-regular) $fz-body-m / var(--lh-s) $font-1;
+          grid-row: 1;
+          grid-column: 2;
+          justify-self: end;
+          color: var(--color-light-fifth);
+        }
+        .content__biography {
+          @include font-body-m;
+          opacity: 0.75;
+          grid-row: 3;
+          grid-column: 1;
+          padding-top: rem(20);
+        }
+      }
+      .content__desc {
+        width: 100%;
+        display: grid;
+        row-gap: rem(37);
+        grid-column: span 2;
+
+        .content__list {
+          display: flex;
+          justify-content: space-between;
+          padding: rem(15) rem(83) rem(17) rem(32);
+          border-radius: rem(15);
+          background-color: var(--color-light-second);
+
+          li span {
+            @include font-s;
+            display: grid;
+            justify-items: start;
+            row-gap: rem(1);
+            color: var(--color-light-fourth);
+
+            span {
+              @include font-l;
+              color: var(--color-light-third);
+            }
+          }
+        }
+      }
+      .content__details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        row-gap: rem(18);
+        column-gap: 65px;
+
+        &-item {
+          font: var(--fw-regular) rem(15) / var(--lh-s) $font-1;
+          display: flex;
+          align-items: center;
+
+          &:nth-child(even) {
+            gap: rem(16);
+          }
+          &:nth-child(1) {
+            gap: rem(19);
+          }
+          &:nth-child(2) {
+            opacity: 0.5;
+          }
+          &:nth-child(3) {
+            gap: rem(13);
+          }
+        }
+      }
+    }
   }
 }
