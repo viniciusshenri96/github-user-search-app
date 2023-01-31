@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --color-light-first: #fefefe;
+  --color-light-second: #f6f8ff;
+  --color-light-third: #2b3442;
+  --color-light-fourth: #4b6a9b;
+  --color-light-fifth: #697c9a;
+  --color-light-sixth: #0079ff;
+  --color-dark-first: #ffffff;
+  --color-dark-second: #141d2f;
+  --color-dark-third: #1e2a47;
+  --color-dark-fourth: #0079ff;
+  --lh-xl: 1.46;
+  --lh-l: 1.5;
+  --lh-m: 1.5;
+  --lh-s: 1.46;
+  --lh-body-m: 1.67;
+  --lh-button: 1.5;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
+ */
+*:focus-visible {
+  outline: var(--color-darkCyan) solid 4px;
+  outline-offset: 4px;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+select {
+  border: none;
+  background: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    background-attachment: initial !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-animation-delay: -1ms !important;
+    animation-delay: -1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+ * Screen Reader Class
+ * 
+ * To hide content visually.
+ *
+ * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+.sr-only {
+  position: absolute !important;
+  margin: -1px !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-light-second);
+  line-height: 1.5;
+  /* improves text rendering */
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.btn {
+  font: var(--fw-bold) 1rem/var(--lh-button) "Space Mono", monospace;
+  padding: 0.8125rem 1.4375rem 0.875rem 1.5rem;
+  background-color: var(--color-light-sixth);
+  border-radius: 0.625rem;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #60abff;
+}
+
+body {
+  max-width: 50.625rem;
+  padding: 0rem 2.5rem 0rem 2.5rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2.25rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  font: var(--fw-bold) 1.75rem/var(--lh-xl) "Space Mono", monospace;
+  color: var(--color-light-third);
+}
+.header__mode {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

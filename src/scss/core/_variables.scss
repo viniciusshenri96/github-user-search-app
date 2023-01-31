@@ -1,0 +1,16 @@
+@use "../abstracts/functions" as *;
+
+// Font Family
+$font-1: "Space Mono", monospace;
+
+// Font Size
+$fz-xl: rem(28);
+$fz-l: rem(22);
+$fz-m: rem(16);
+$fz-s: rem(13);
+
+// body
+$fz-body-m: rem(15);
+
+// button
+$fz-button: rem(16);

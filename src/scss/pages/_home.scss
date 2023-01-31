@@ -1,0 +1,30 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+@use "../core/typography" as *;
+
+body {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: rem(36);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    @include font-xl;
+    color: var(--color-light-third);
+  }
+
+  &__mode {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+}
