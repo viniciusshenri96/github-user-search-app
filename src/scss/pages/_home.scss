@@ -173,8 +173,13 @@ body {
 
         &-item {
           font: var(--fw-regular) rem(15) / var(--lh-s) $font-1;
+          color: var(--color-light-fourth);
           display: flex;
           align-items: center;
+
+          a {
+            color: var(--color-light-fourth);
+          }
 
           &:nth-child(even) {
             gap: rem(16);

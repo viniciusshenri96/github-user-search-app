@@ -275,8 +275,12 @@ body {
 }
 .content__box .content__info .content__details-item {
   font: var(--fw-regular) 0.9375rem/var(--lh-s) "Space Mono", monospace;
+  color: var(--color-light-fourth);
   display: flex;
   align-items: center;
+}
+.content__box .content__info .content__details-item a {
+  color: var(--color-light-fourth);
 }
 .content__box .content__info .content__details-item:nth-child(even) {
   gap: 1rem;
