@@ -1,6 +1,8 @@
-const userGit = async function () {
-  const data = await fetch("https://api.github.com/users/iuricode");
+import { API_URL } from "./config.js";
+
+export const searchUserGitHub = async function () {
+  const data = await fetch(`${API_URL}viniciusshenri96`);
   const res = await data.json();
-  console.log(res);
+
+  return res;
 };
-userGit();
