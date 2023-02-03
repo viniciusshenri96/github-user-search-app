@@ -57,10 +57,12 @@ body {
 
 .content {
   max-width: 100%;
+
   &__search {
     display: grid;
     margin-bottom: rem(24);
-    img {
+    span {
+      width: max-content;
       z-index: 1;
       grid-area: 1 / -1;
       align-self: center;

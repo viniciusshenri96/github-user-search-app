@@ -1,8 +1,13 @@
 import { API_URL } from "./config.js";
 
-export const searchUserGitHub = async function () {
-  const data = await fetch(`${API_URL}viniciusshenri96`);
-  const res = await data.json();
-
-  return res;
+export const searchUserGitHub = async function (query) {
+  try {
+    const data = await fetch(`${API_URL}${query}`);
+    const res = await data.json();
+    console.log(data);
+    console.log(res);
+    return res;
+  } catch (err) {
+    console.error(err);
+  }
 };
