@@ -99,12 +99,17 @@ body {
       grid-template-columns: max-content 1fr 1fr;
 
       .content__photo {
-        background: red;
         width: rem(117);
         height: rem(117);
-        border-radius: 100%;
         grid-row: span 3;
         margin-right: rem(37);
+        border-radius: 100%;
+
+        img {
+          border-radius: 100%;
+          width: rem(117);
+          height: rem(117);
+        }
       }
       .content__bio {
         // display: flex;
@@ -112,7 +117,7 @@ body {
         margin-bottom: rem(32);
         display: grid;
         align-items: center;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr max-content;
 
         .content__name {
           @include font-xl;
@@ -141,8 +146,8 @@ body {
       }
       .content__desc {
         width: 100%;
-        display: grid;
-        row-gap: rem(37);
+        // display: grid;
+
         grid-column: span 2;
 
         .content__list {
@@ -151,6 +156,7 @@ body {
           padding: rem(15) rem(83) rem(17) rem(32);
           border-radius: rem(15);
           background-color: var(--color-light-second);
+          margin-bottom: rem(37);
 
           li span {
             @include font-s;
@@ -168,23 +174,29 @@ body {
       }
       .content__details {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
+        // flex-direction: column;
+        grid-template-columns: auto 1fr;
+
+        // justify-content: space-between;
         row-gap: rem(18);
         column-gap: 65px;
 
         &-item {
           font: var(--fw-regular) rem(15) / var(--lh-s) $font-1;
           color: var(--color-light-fourth);
-          display: flex;
+          display: grid;
+          align-items: center;
+          grid-template-columns: max-content auto;
           align-items: center;
 
           a {
             color: var(--color-light-fourth);
+            word-wrap: anywhere;
           }
 
           &:nth-child(even) {
             gap: rem(16);
+            // justify-self: center;
           }
           &:nth-child(1) {
             gap: rem(19);
@@ -194,6 +206,7 @@ body {
           }
           &:nth-child(3) {
             gap: rem(13);
+            word-break: break-all;
           }
         }
       }

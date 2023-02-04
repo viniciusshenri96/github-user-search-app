@@ -206,19 +206,23 @@ body {
   grid-template-columns: max-content 1fr 1fr;
 }
 .content__box .content__info .content__photo {
-  background: red;
   width: 7.3125rem;
   height: 7.3125rem;
-  border-radius: 100%;
   grid-row: span 3;
   margin-right: 2.3125rem;
+  border-radius: 100%;
+}
+.content__box .content__info .content__photo img {
+  border-radius: 100%;
+  width: 7.3125rem;
+  height: 7.3125rem;
 }
 .content__box .content__info .content__bio {
   grid-column: span 2;
   margin-bottom: 2rem;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr max-content;
 }
 .content__box .content__info .content__bio .content__name {
   font: var(--fw-bold) 1.75rem/var(--lh-xl) "Space Mono", monospace;
@@ -245,8 +249,6 @@ body {
 }
 .content__box .content__info .content__desc {
   width: 100%;
-  display: grid;
-  row-gap: 2.3125rem;
   grid-column: span 2;
 }
 .content__box .content__info .content__desc .content__list {
@@ -255,6 +257,7 @@ body {
   padding: 0.9375rem 5.1875rem 1.0625rem 2rem;
   border-radius: 0.9375rem;
   background-color: var(--color-light-second);
+  margin-bottom: 2.3125rem;
 }
 .content__box .content__info .content__desc .content__list li span {
   font: var(--fw-regular) 0.8125rem/var(--lh-s) "Space Mono", monospace;
@@ -269,19 +272,21 @@ body {
 }
 .content__box .content__info .content__details {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: auto 1fr;
   row-gap: 1.125rem;
   column-gap: 65px;
 }
 .content__box .content__info .content__details-item {
   font: var(--fw-regular) 0.9375rem/var(--lh-s) "Space Mono", monospace;
   color: var(--color-light-fourth);
-  display: flex;
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content auto;
   align-items: center;
 }
 .content__box .content__info .content__details-item a {
   color: var(--color-light-fourth);
+  word-wrap: anywhere;
 }
 .content__box .content__info .content__details-item:nth-child(even) {
   gap: 1rem;
@@ -294,6 +299,7 @@ body {
 }
 .content__box .content__info .content__details-item:nth-child(3) {
   gap: 0.8125rem;
+  word-break: break-all;
 }
 
 /*# sourceMappingURL=style.css.map */
