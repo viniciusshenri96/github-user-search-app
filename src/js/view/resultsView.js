@@ -14,7 +14,14 @@ class resultsView {
     console.log(data);
     const markup = `
     <div class="content__info">
-      <div class="content__photo"><img src="${data.avatar_url}" alt=""></div>
+      <div class="content__photo">
+      <img src="${data.avatar_url}" alt="">
+      <svg xmlns="http://www.w3.org/2000/svg" class="start" viewBox="0 0 512 512">
+      <title>Add to Favorites</title>
+      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+        stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+    </svg>
+      </div>
       <div class="content__bio">
         <h1 class="content__name">${data.name}</h1>
         <p class="content__user">@${data.login}</p>

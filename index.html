@@ -20,8 +20,16 @@
     <a class="header__logo" href="/">devfinder</a>
 
     <button type="button" class="header__mode">
+      <span class="header__mode-text">FAVORITES</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="start" viewBox="0 0 512 512">
+        <title></title>
+        <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none" stroke="currentColor"
+          stroke-linejoin="round" stroke-width="32" />
+      </svg>
+    </button>
+    <button type="button" class="header__mode">
       <span class="header__mode-text">Dark</span>
-      <svg width="20" height="20" aria-hidden="true">
+      <svg width="20" height="20" aria-hidden="true" class="moon">
         <path
           d="M19.513 11.397a.701.701 0 00-.588.128 7.496 7.496 0 01-2.276 1.336 7.101 7.101 0 01-2.583.462 7.505 7.505 0 01-5.32-2.209 7.568 7.568 0 01-2.199-5.342c0-.873.154-1.72.41-2.49a6.904 6.904 0 011.227-2.21.657.657 0 00-.102-.924.701.701 0 00-.589-.128C5.32.61 3.427 1.92 2.072 3.666A10.158 10.158 0 000 9.83c0 2.8 1.125 5.342 2.967 7.19a10.025 10.025 0 007.16 2.98c2.353 0 4.527-.822 6.266-2.183a10.13 10.13 0 003.58-5.624.623.623 0 00-.46-.796z"
           fill="#697C9A" fill-rule="nonzero" />
@@ -41,7 +49,16 @@
       </form>
       <section class="content__box">
         <div class="content__info">
-          <div class="content__photo"><img src="src/img/user-photo.jpg" alt=""></div>
+          <div class="content__photo">
+            <img src="src/img/user-photo.jpg" alt="">
+            <button type="button" class="button--fav">
+              <svg xmlns="http://www.w3.org/2000/svg" class="start" viewBox="0 0 512 512">
+                <title>Add to Favorites</title>
+                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                  stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+              </svg>
+            </button>
+          </div>
           <div class="content__bio">
             <h1 class="content__name" data-name>The Octocat</h1>
             <p class="content__user" data-user>@octocat</p>
