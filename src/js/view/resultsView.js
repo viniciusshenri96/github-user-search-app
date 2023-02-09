@@ -16,11 +16,13 @@ class resultsView {
     <div class="content__info">
       <div class="content__photo">
       <img src="${data.avatar_url}" alt="">
+      <button type="button" class="button--fav">
       <svg xmlns="http://www.w3.org/2000/svg" class="start" viewBox="0 0 512 512">
-      <title>Add to Favorites</title>
-      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
-        stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
-    </svg>
+        <title>Add to Favorites</title>
+        <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+          stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+      </svg>
+    </button>
       </div>
       <div class="content__bio">
         <h1 class="content__name">${data.name}</h1>
