@@ -2,15 +2,20 @@ import { searchUserGitHub } from "./model.js";
 import resultsView from "./view/resultsView.js";
 
 const controleResults = async function () {
-  // const data = await searchUserGitHub();
+  try {
+    // const data = await searchUserGitHub();
 
-  // Pesquisando usuario
-  const query = resultsView.getQuery();
-  if (!query) return;
-  const data = await searchUserGitHub(query);
+    // Pesquisando usuario
+    const query = resultsView.getQuery();
+    if (!query) return;
+    const data = await searchUserGitHub(query);
 
-  // Conexão com API
-  resultsView.render(data);
+    // Conexão com API
+    resultsView.render(data);
+    resultsView.clearMessage();
+  } catch (err) {
+    resultsView.errorMessage();
+  }
 };
 controleResults();
 

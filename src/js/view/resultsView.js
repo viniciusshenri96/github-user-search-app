@@ -4,14 +4,13 @@ class resultsView {
   _parentForm = document.querySelector(".content__search");
 
   render(data) {
+    if (!data) return;
     const dateCreateGitHub = new Date(data.created_at);
-    const options = { month: "short" };
     const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
       "en-US",
-      options
+      { month: "short" }
     ).format(dateCreateGitHub)} ${dateCreateGitHub.getFullYear()}`;
 
-    console.log(data);
     const markup = `
     <div class="content__info">
       <div class="content__photo">
@@ -98,7 +97,7 @@ class resultsView {
   getQuery() {
     const query = this._parentForm.querySelector(".search").value;
 
-    this._clearInput();
+    // this._clearInput();
     return query;
   }
 
@@ -109,8 +108,16 @@ class resultsView {
     });
   }
 
-  _clearInput() {
-    this._parentForm.querySelector(".search").value = "";
+  errorMessage() {
+    const markup = `
+    <span class="content__results">No results</span>
+    `;
+    this._parentForm.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  clearMessage() {
+    if (document.querySelector(".content__results"))
+      document.querySelector(".content__results").innerHTML = "";
   }
 }
 

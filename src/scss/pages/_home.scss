@@ -76,7 +76,7 @@ body {
   }
 }
 main {
-  max-width: rem(730);
+  width: 100%;
 }
 
 .content {
@@ -95,7 +95,7 @@ main {
       font: var(--fw-regular) rem(18) / var(--lh-search) $font-1;
       grid-area: 1 / -1;
       max-width: 100%;
-      padding: rem(22) rem(140) rem(22) rem(80);
+      padding: rem(22) rem(256) rem(22) rem(80);
       border-radius: rem(15);
       border: none;
       box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
@@ -106,6 +106,15 @@ main {
       }
     }
 
+    .content__results {
+      @include font-body-m;
+      color: #f74646;
+      font-weight: var(--fw-bold);
+      justify-self: end;
+      margin-right: 140px;
+      padding: 0;
+    }
+
     .button__box {
       grid-area: 1 / -1;
       justify-self: end;
@@ -113,6 +122,7 @@ main {
     }
   }
   &__box {
+    // max-height: rem(419);
     padding: rem(48);
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
     background-color: var(--color-light-first);
