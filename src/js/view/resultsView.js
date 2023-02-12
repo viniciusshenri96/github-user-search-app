@@ -4,6 +4,7 @@ class resultsView {
   _parentForm = document.querySelector(".content__search");
 
   render(data) {
+    console.log(data);
     if (!data) return;
     const dateCreateGitHub = new Date(data.created_at);
     const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
