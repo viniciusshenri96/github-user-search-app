@@ -22,6 +22,8 @@ export const searchUserGitHub = async function (query) {
     ]);
     const data = await res.json();
 
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+
     state.users = {
       query: query,
       avatar_url: data.avatar_url,
@@ -39,9 +41,9 @@ export const searchUserGitHub = async function (query) {
 
     localStoraUsers();
 
-    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (err) {
+    console.log(err);
     throw err;
   }
 };
@@ -56,3 +58,5 @@ function init() {
 }
 
 init();
+
+localStorage.clear();
