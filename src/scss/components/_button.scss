@@ -1,17 +1,20 @@
 @use "../abstracts/functions" as *;
 @use "../core/typography" as *;
+@use "../core/variables" as *;
 
-.btn {
-  @include font-button;
-  padding: rem(13) rem(23) rem(14) rem(24);
-  background-color: var(--color-light-sixth);
-  border-radius: rem(10);
-  color: #ffffff;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
+@media (min-width: rem(375)) {
+  .btn {
+    font: var(--fw-bold) rem(14) / #{1.5} $font-1;
+    padding: rem(12.5) rem(14) rem(12.5) rem(18);
+    background-color: var(--color-light-sixth);
+    border-radius: rem(10);
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
 
-  &:hover {
-    background-color: #60abff;
+    &:hover {
+      background-color: #60abff;
+    }
   }
 }

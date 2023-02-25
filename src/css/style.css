@@ -6,10 +6,6 @@
   --color-light-fourth: #4b6a9b;
   --color-light-fifth: #697c9a;
   --color-light-sixth: #0079ff;
-  --color-dark-first: #ffffff;
-  --color-dark-second: #141d2f;
-  --color-dark-third: #1e2a47;
-  --color-dark-fourth: #0079ff;
   --lh-xl: 1.46;
   --lh-l: 1.5;
   --lh-m: 1.5;
@@ -103,272 +99,48 @@ body {
   position: relative;
 }
 
-.btn {
-  font: var(--fw-bold) 1rem/var(--lh-button) "Space Mono", monospace;
-  padding: 0.8125rem 1.4375rem 0.875rem 1.5rem;
-  background-color: var(--color-light-sixth);
-  border-radius: 0.625rem;
-  color: #ffffff;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
+@media (min-width: 23.4375rem) {
+  .btn {
+    font: var(--fw-bold) 0.875rem/1.5 "Space Mono", monospace;
+    padding: 0.78125rem 0.875rem 0.78125rem 1.125rem;
+    background-color: var(--color-light-sixth);
+    border-radius: 0.625rem;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background-color: #60abff;
+  }
 }
-.btn:hover {
-  background-color: #60abff;
-}
-
-body {
-  max-width: 57.875rem;
-  padding: 0rem 6.125rem 0rem 6.125rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  gap: 2.25rem;
-}
-
 .header {
-  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin: 0 auto;
+  padding-top: 1.9375rem;
+  padding-bottom: 2.1875rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .header__logo {
-  font: var(--fw-bold) 1.75rem/var(--lh-xl) "Space Mono", monospace;
-  color: var(--color-light-third);
+  display: inline-block;
+  font: var(--fw-bold) 1.625rem/1.5 "Space Mono", monospace;
+  color: #222731;
 }
 .header__mode {
-  border: none;
   background: none;
-  cursor: pointer;
+  border: none;
   display: flex;
-  align-items: center;
   gap: 1rem;
-}
-.header__mode .start {
-  width: 20px;
-  height: 20px;
-}
-.header__mode .start path {
-  stroke: var(--color-light-fifth);
-  stroke-width: 54px;
-}
-.header__mode .start.active path {
-  fill: var(--color-light-fifth);
 }
 .header__mode-text {
   font: var(--fw-regular) 0.8125rem/var(--lh-s) "Space Mono", monospace;
-  letter-spacing: 0.15625rem;
-  color: var(--color-light-fifth);
-  font-weight: var(--fw-bold);
   text-transform: uppercase;
-}
-.header__mode-text,
-.header__mode svg path {
-  transition: 0.2s ease-in-out;
-}
-.header__mode:hover .header__mode-text,
-.header__mode:hover .moon path {
-  fill: #222731;
-  color: #222731;
-}
-.header__mode:hover .header__mode-text,
-.header__mode:hover .start path {
-  stroke: #222731;
-  color: #222731;
-}
-
-main {
-  width: 100%;
-}
-
-.content__search {
-  width: 100%;
-  display: grid;
-  margin-bottom: 1.5rem;
-}
-.content__search span {
-  width: max-content;
-  z-index: 1;
-  grid-area: 1/-1;
-  align-self: center;
-  padding: 1.4375rem 1.5rem 1.4375rem 2rem;
-}
-.content__search .search {
-  font: var(--fw-regular) 1.125rem/var(--lh-search) "Space Mono", monospace;
-  grid-area: 1/-1;
-  max-width: 100%;
-  padding: 1.375rem 16rem 1.375rem 5rem;
-  border-radius: 0.9375rem;
-  border: none;
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-}
-.content__search .search::placeholder {
-  font: var(--fw-regular) 1.125rem/var(--lh-search) "Space Mono", monospace;
-  color: var(--color-light-fourth);
-}
-.content__search .content__results {
-  font: var(--fw-regular) 0.9375rem/var(--lh-body-m) "Space Mono", monospace;
-  color: #f74646;
   font-weight: var(--fw-bold);
-  justify-self: end;
-  margin-right: 140px;
-  padding: 0;
-}
-.content__search .button__box {
-  grid-area: 1/-1;
-  justify-self: end;
-  padding: 0.59375rem 0.625rem 0.59375rem 1.5rem;
-}
-.content__box {
-  padding: 3rem;
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-  background-color: var(--color-light-first);
-  border-radius: 0.9375rem;
-}
-.content__box .content__info {
-  display: grid;
-  grid-template-columns: max-content 1fr 1fr;
-}
-.content__box .content__info .content__photo {
-  width: 7.3125rem;
-  height: 7.3125rem;
-  grid-row: span 3;
-  margin-right: 2.3125rem;
-  border-radius: 100%;
-  display: grid;
-  justify-items: center;
-  gap: 1.3125rem;
-}
-.content__box .content__info .content__photo .button--fav {
-  background: none;
-  border: none;
-}
-.content__box .content__info .content__photo .button--fav .start {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-}
-.content__box .content__info .content__photo .button--fav .start:hover path {
-  stroke: var(--color-light-sixth);
-}
-.content__box .content__info .content__photo .button--fav .start path {
-  transition: 0.2s ease-in-out;
-  stroke: var(--color-light-third);
-  stroke-width: 44px;
-}
-.content__box .content__info .content__photo .button--fav-active .start path {
-  fill: rgb(255, 179, 0);
-}
-.content__box .content__info .content__photo img {
-  border-radius: 100%;
-  width: 7.3125rem;
-  height: 7.3125rem;
-}
-.content__box .content__info .content__bio {
-  grid-column: span 2;
-  margin-bottom: 2rem;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr max-content;
-}
-.content__box .content__info .content__bio .content__name {
-  font: var(--fw-bold) 1.75rem/var(--lh-xl) "Space Mono", monospace;
-  color: var(--color-light-third);
-}
-.content__box .content__info .content__bio .content__user {
-  font: var(--fw-regular) 1rem/var(--lh-m) "Space Mono", monospace;
-  grid-column: 1;
-  color: var(--color-light-sixth);
-}
-.content__box .content__info .content__bio .content__date {
-  font: var(--fw-regular) 0.9375rem/var(--lh-s) "Space Mono", monospace;
-  grid-row: 1;
-  grid-column: 2;
-  justify-self: end;
-  color: var(--color-light-fifth);
-}
-@media (max-width: 50rem) {
-  .content__box .content__info .content__bio .content__date {
-    grid-row: 3;
-    grid-column: 1;
-  }
-}
-.content__box .content__info .content__bio .content__biography {
-  font: var(--fw-regular) 0.9375rem/var(--lh-body-m) "Space Mono", monospace;
-  opacity: 0.75;
-  grid-row: 3;
-  grid-column: 1;
-  padding-top: 1.25rem;
-  grid-column: span 2;
-}
-.content__box .content__info .content__desc {
-  width: 100%;
-  grid-column: span 2;
-}
-.content__box .content__info .content__desc .content__list {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.9375rem 5.1875rem 1.0625rem 2rem;
-  border-radius: 0.9375rem;
-  background-color: var(--color-light-second);
-  margin-bottom: 2.3125rem;
-}
-.content__box .content__info .content__desc .content__list li span {
-  font: var(--fw-regular) 0.8125rem/var(--lh-s) "Space Mono", monospace;
-  display: grid;
-  justify-items: start;
-  row-gap: 0.0625rem;
-  color: var(--color-light-fourth);
-}
-.content__box .content__info .content__desc .content__list li span span {
-  font: var(--fw-bold) 1.375rem/var(--lh-l) "Space Mono", monospace;
-  color: var(--color-light-third);
-}
-.content__box .content__info .content__details {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  row-gap: 1.125rem;
-  column-gap: 1.25rem;
-}
-.content__box .content__info .content__details-item {
-  font: var(--fw-regular) 0.9375rem/var(--lh-s) "Space Mono", monospace;
-  color: var(--color-light-fourth);
-  display: grid;
-  align-items: center;
-  grid-template-columns: max-content auto;
-  align-items: center;
-  position: relative;
-}
-.content__box .content__info .content__details-item [data-disabled=block] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  z-index: 2;
-  cursor: no-drop;
-  display: none;
-}
-.content__box .content__info .content__details-item a:link {
-  display: inline-block;
-  color: var(--color-light-fourth);
-  word-break: break-all;
-}
-.content__box .content__info .content__details-item:nth-child(even) {
-  gap: 1rem;
-}
-.content__box .content__info .content__details-item:nth-child(1) {
-  gap: 1.1875rem;
-}
-.content__box .content__info .content__details-item:nth-child(3) {
-  gap: 0.8125rem;
-}
-.content__box .content__info .content__details-item:nth-child(4) {
-  gap: 0.8125rem;
-  word-break: break-all;
+  letter-spacing: 0.15625rem;
+  color: #4b6a9b;
 }
 
 /*# sourceMappingURL=style.css.map */

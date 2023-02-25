@@ -3,8 +3,8 @@ import { TIMEOUT_API } from "./config.js";
 
 export const state = {
   users: {},
-  favorites: [],
 };
+console.log(state);
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -43,7 +43,6 @@ export const searchUserGitHub = async function (query) {
 
     return data;
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };
@@ -58,5 +57,3 @@ function init() {
 }
 
 init();
-
-localStorage.clear();

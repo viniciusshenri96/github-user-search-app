@@ -6,9 +6,9 @@ const controleResults = async function () {
     const query = resultsView.getQuery();
     if (!query) return;
 
-    const data = await model.searchUserGitHub(query);
+    await model.searchUserGitHub(query);
 
-    resultsView.render(data);
+    resultsView.render(model.state.users);
 
     resultsView.clearMessage();
   } catch (err) {
@@ -19,5 +19,8 @@ const controleResults = async function () {
 
 const init = function () {
   resultsView.addHandleSeach(controleResults);
+  // resultsView.addHandlerAddFavorites(controlAddFavorites);
+  // model.localStoraUsers();
+  resultsView.render(model.state.users);
 };
 init();

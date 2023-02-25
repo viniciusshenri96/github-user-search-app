@@ -10,11 +10,11 @@
   --color-light-fifth: #697c9a;
   --color-light-sixth: #0079ff;
 
-  // DARK MODE COLORS
-  --color-dark-first: #ffffff;
-  --color-dark-second: #141d2f;
-  --color-dark-third: #1e2a47;
-  --color-dark-fourth: #0079ff;
+  // // DARK MODE COLORS
+  // --color-dark-first: #ffffff;
+  // --color-dark-second: #141d2f;
+  // --color-dark-third: #1e2a47;
+  // --color-dark-fourth: #0079ff;
 
   // title
   --lh-xl: 1.46;
@@ -117,3 +117,22 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // DARK MODE COLORS
+//     --color-dark-first: #ffffff;
+//     --color-dark-second: #141d2f;
+//     --color-dark-third: #1e2a47;
+//     --color-dark-fourth: #0079ff;
+//   }
+
+//   body {
+//     background: var(--color-dark-second);
+
+//     .header__logo,
+//     .header__mode-text {
+//       color: var(--color-dark-first);
+//     }
+//   }
+// }
