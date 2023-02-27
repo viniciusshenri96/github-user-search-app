@@ -24,6 +24,7 @@ $color-hover-button-mode: #222731;
     border: none;
     display: flex;
     gap: rem(16);
+    cursor: pointer;
 
     &-text {
       @include font-s;
@@ -76,8 +77,18 @@ $color-hover-button-mode: #222731;
 
     .content__icon-box,
     .search,
-    .button__box {
+    .button__box,
+    .content__results {
       grid-area: 1 / 1;
+    }
+
+    .content__results {
+      font: var(--fw-regular) rem(15) / #{1.46} $font-1;
+      color: #f74646;
+      font-weight: var(--fw-bold);
+      z-index: 2;
+      place-self: center end;
+      padding-right: rem(140);
     }
 
     .content__icon-box {
@@ -96,7 +107,6 @@ $color-hover-button-mode: #222731;
       box-sizing: content-box;
       &::placeholder {
         color: var(--color-light-fourth);
-        z-index: 999;
       }
     }
 
@@ -120,7 +130,7 @@ $color-hover-button-mode: #222731;
       .search {
         font: var(--fw-regular) rem(18) / #{1.39} $font-1;
 
-        padding: rem(22) rem(0) rem(22) rem(80);
+        padding: rem(22) rem(256) rem(22) rem(80);
       }
 
       .button__box {
@@ -216,9 +226,22 @@ $color-hover-button-mode: #222731;
         gap: rem(16);
 
         .content__details-item {
-          display: flex;
+          display: grid;
+          grid-template-columns: auto 1fr;
           align-items: center;
           gap: rem(13);
+          position: relative;
+
+          .block {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            opacity: 0.5;
+            cursor: no-drop;
+          }
 
           &:nth-child(1) {
             gap: rem(19);
@@ -227,6 +250,7 @@ $color-hover-button-mode: #222731;
           .content__details-subtitle {
             font: var(--fw-regular) rem(13) / #{1.46} $font-1;
             color: var(--color-light-fourth);
+            word-break: break-all;
           }
         }
       }
@@ -299,10 +323,6 @@ $color-hover-button-mode: #222731;
           gap: rem(16);
 
           .content__details-item {
-            display: flex;
-            align-items: center;
-            gap: rem(13);
-
             &:nth-child(1) {
               gap: rem(19);
             }
@@ -395,8 +415,6 @@ $color-hover-button-mode: #222731;
           gap: rem(16);
 
           .content__details-item {
-            display: flex;
-            align-items: center;
             gap: rem(13);
 
             &:nth-child(1) {

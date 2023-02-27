@@ -58,7 +58,7 @@ class resultsView {
                 <p class="content__details-subtitle">${
                   data.location ? data.location : "Not Available"
                 }</p>
-                <div data-disabled="block" ${
+                <div class="block" ${
                   data.location
                     ? "style='display:none'"
                     : "style='display:block'"
@@ -79,7 +79,7 @@ class resultsView {
                   data.blog ? data.blog : ""
                 }">${data.blog ? data.blog : "Not Available"}</a>
 
-                <div data-disabled="block" ${
+                <div class="block" ${
                   data.blog ? "style='display:none'" : "style='display:block'"
                 }></div>
               </li>
@@ -100,7 +100,7 @@ class resultsView {
                     : "Not Available"
                 }</p>
 
-                <div data-disabled="block" ${
+                <div class="block" ${
                   data.twitter_username
                     ? "style='display:none'"
                     : "style='display:block'"
@@ -121,7 +121,7 @@ class resultsView {
                   data.company ? data.company : "Not Available"
                 }</p>
                 
-            <div data-disabled="block" ${
+            <div class="block" ${
               data.company ? "style='display:none'" : "style='display:block'"
             }></div>
               </li>
@@ -166,6 +166,8 @@ class resultsView {
     if (document.querySelector(".content__results"))
       document.querySelector(".content__results").innerHTML = "";
   }
+
+  _darkMode() {}
 }
 
 export default new resultsView();
