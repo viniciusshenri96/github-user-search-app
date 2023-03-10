@@ -116,11 +116,12 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
-
+  // transition: all 0.4s;
+  transition: all 0.5s ease-out;
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
+body.dark-mode {
   :root {
     // DARK MODE COLORS
     --color-dark-first: #ffffff;
@@ -131,42 +132,90 @@ body {
     --color-light-first: #1e2a47;
   }
 
+  background: #141d2f;
+  transition: all 0.5s ease-out;
+
   * {
-    color: var(--color-dark-first) !important;
+    color: #ffffff !important;
   }
 
-  body {
-    background: var(--color-dark-second);
+  .header__logo {
+    color: #ffffff !important;
+  }
 
-    .header__logo,
-    .header__mode-text,
-    .moon path {
-      fill: var(--color-dark-first);
-      color: var(--color-dark-first);
-    }
+  .content__box {
+    background: #1e2a47;
+    box-shadow: none;
+  }
 
-    .content__box {
-      box-shadow: none;
+  .search {
+    background: #1e2a47;
+    color: #fff;
+    &::placeholder {
+      color: inherit !important;
     }
+  }
 
-    .search {
-      background: var(--color-light-first);
-      color: #fff;
-      &::placeholder {
-        color: inherit !important;
-      }
-    }
+  svg path {
+    fill: #ffffff;
+  }
 
-    svg path {
-      fill: var(--color-dark-first);
-    }
+  .content__user {
+    color: #0079ff !important;
+  }
 
-    .content__user {
-      color: var(--color-dark-fourth) !important;
-    }
-
-    .content__list {
-      background-color: var(--color-dark-second) !important;
-    }
+  .content__list {
+    background-color: #141d2f !important;
   }
 }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // DARK MODE COLORS
+//     --color-dark-first: #ffffff;
+//     --color-dark-second: #141d2f;
+//     --color-dark-third: #1e2a47;
+//     --color-dark-fourth: #0079ff;
+
+//     --color-light-first: #1e2a47;
+//   }
+
+//   * {
+//     color: var(--color-dark-first) !important;
+//   }
+
+//   body {
+//     background: var(--color-dark-second);
+
+//     .header__logo,
+//     .header__mode-text,
+//     .moon path {
+//       fill: var(--color-dark-first);
+//       color: var(--color-dark-first);
+//     }
+
+//     .content__box {
+//       box-shadow: none;
+//     }
+
+//     .search {
+//       background: var(--color-light-first);
+//       color: #fff;
+//       &::placeholder {
+//         color: inherit !important;
+//       }
+//     }
+
+//     svg path {
+//       fill: var(--color-dark-first);
+//     }
+
+//     .content__user {
+//       color: var(--color-dark-fourth) !important;
+//     }
+
+//     .content__list {
+//       background-color: var(--color-dark-second) !important;
+//     }
+//   }
+// }

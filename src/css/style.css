@@ -97,49 +97,48 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
+  transition: all 0.5s ease-out;
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-dark-first: #ffffff;
-    --color-dark-second: #141d2f;
-    --color-dark-third: #1e2a47;
-    --color-dark-fourth: #0079ff;
-    --color-light-first: #1e2a47;
-  }
-  * {
-    color: var(--color-dark-first) !important;
-  }
-  body {
-    background: var(--color-dark-second);
-  }
-  body .header__logo,
-body .header__mode-text,
-body .moon path {
-    fill: var(--color-dark-first);
-    color: var(--color-dark-first);
-  }
-  body .content__box {
-    box-shadow: none;
-  }
-  body .search {
-    background: var(--color-light-first);
-    color: #fff;
-  }
-  body .search::placeholder {
-    color: inherit !important;
-  }
-  body svg path {
-    fill: var(--color-dark-first);
-  }
-  body .content__user {
-    color: var(--color-dark-fourth) !important;
-  }
-  body .content__list {
-    background-color: var(--color-dark-second) !important;
-  }
+body.dark-mode {
+  background: #141d2f;
+  transition: all 0.5s ease-out;
 }
+body.dark-mode :root {
+  --color-dark-first: #ffffff;
+  --color-dark-second: #141d2f;
+  --color-dark-third: #1e2a47;
+  --color-dark-fourth: #0079ff;
+  --color-light-first: #1e2a47;
+}
+body.dark-mode * {
+  color: #ffffff !important;
+}
+body.dark-mode .header__logo {
+  color: #ffffff !important;
+}
+body.dark-mode .content__box {
+  background: #1e2a47;
+  box-shadow: none;
+}
+body.dark-mode .search {
+  background: #1e2a47;
+  color: #fff;
+}
+body.dark-mode .search::placeholder {
+  color: inherit !important;
+}
+body.dark-mode svg path {
+  fill: #ffffff;
+}
+body.dark-mode .content__user {
+  color: #0079ff !important;
+}
+body.dark-mode .content__list {
+  background-color: #141d2f !important;
+}
+
 .btn {
   font: var(--fw-bold) 0.875rem/1.5 "Space Mono", monospace;
   padding: 0.78125rem 0.875rem 0.78125rem 1.125rem;
@@ -234,6 +233,24 @@ body .moon path {
     font-weight: var(--fw-bold);
     letter-spacing: 0.15625rem;
     color: #4b6a9b;
+  }
+  .header__mode:nth-child(2) {
+    display: flex;
+  }
+  .header__mode:nth-child(2).active {
+    display: none;
+  }
+  .header__mode:nth-child(3) {
+    display: none;
+  }
+  .header__mode:nth-child(3) svg g {
+    fill: #fff;
+  }
+  .header__mode:nth-child(3).active {
+    display: flex;
+  }
+  .header__mode:nth-child(3).active .header__mode-text {
+    color: #fff;
   }
 }
 

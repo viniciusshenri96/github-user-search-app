@@ -1,8 +1,7 @@
 class resultsView {
-  _data;
   _parentEl = document.querySelector(".content__box");
   _parentForm = document.querySelector(".content__search");
-
+  _parentHeader = document.querySelector(".header");
   render(data) {
     const dateCreateGitHub = new Date(data.created_at);
     const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
@@ -167,7 +166,13 @@ class resultsView {
       document.querySelector(".content__results").innerHTML = "";
   }
 
-  _darkMode() {}
+  addHandlerDarkMode(handle) {
+    this._parentHeader.addEventListener("click", function (e) {
+      const clicked = e.target.closest(".header__mode");
+      if (!clicked) return;
+      handle(clicked);
+    });
+  }
 }
 
 export default new resultsView();
