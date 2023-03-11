@@ -3,6 +3,7 @@ import { TIMEOUT_API } from "./config.js";
 
 export const state = {
   users: {},
+  darkMode: "",
 };
 console.log(state);
 
@@ -45,6 +46,16 @@ export const searchUserGitHub = async function (query) {
   } catch (err) {
     throw err;
   }
+};
+
+export const setDarkModeStorage = (theme) => {
+  localStorage.setItem("selected-theme", theme);
+};
+
+export const getDarkModeStorage = () => {
+  const storage = localStorage.getItem("selected-theme");
+
+  if (storage) return (state.darkMode = storage);
 };
 
 export function localStoraUsers() {

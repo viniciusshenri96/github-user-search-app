@@ -2,6 +2,9 @@ class resultsView {
   _parentEl = document.querySelector(".content__box");
   _parentForm = document.querySelector(".content__search");
   _parentHeader = document.querySelector(".header");
+
+  _text = document.querySelector(".header__mode-text");
+  _icon = document.querySelector("img");
   render(data) {
     const dateCreateGitHub = new Date(data.created_at);
     const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
@@ -135,7 +138,6 @@ class resultsView {
   getQuery() {
     const query = this._parentForm.querySelector(".search").value;
 
-    // this._clearInput();
     return query;
   }
 
@@ -145,14 +147,6 @@ class resultsView {
       handler();
     });
   }
-
-  // addHandlerAddFavorites(handler) {
-  //   this._parentEl
-  //     .querySelector(".button--fav")
-  //     .addEventListener("click", function (e) {
-  //       e.defaultPrevented();
-  //     });
-  // }
 
   errorMessage() {
     const markup = `
@@ -166,11 +160,33 @@ class resultsView {
       document.querySelector(".content__results").innerHTML = "";
   }
 
+  _propsDarkMode(text, style, icon) {
+    this._text.textContent = text;
+
+    this._text.style.color = style;
+
+    this._icon.src = icon;
+  }
+
+  handlerDarkMode(theme) {
+    this._text.textContent = theme;
+    if (this._text.textContent === "Dark") {
+      this._propsDarkMode("Light", "#FFF", `./src/img/icon-sun.svg`);
+
+      document.body.classList.add("dark-mode");
+    } else {
+      this._propsDarkMode("Dark", "#4b6a9b", `./src/img/icon-moon.svg`);
+
+      document.body.classList.remove("dark-mode");
+    }
+  }
+
   addHandlerDarkMode(handle) {
-    this._parentHeader.addEventListener("click", function (e) {
+    this._parentHeader.addEventListener("click", (e) => {
       const clicked = e.target.closest(".header__mode");
       if (!clicked) return;
-      handle(clicked);
+      handle(this._text.textContent);
+      this.handlerDarkMode(this._text.textContent);
     });
   }
 }
