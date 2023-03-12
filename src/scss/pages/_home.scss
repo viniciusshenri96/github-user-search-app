@@ -93,48 +93,47 @@ $color-hover-button-mode: #222731;
 
   &__search {
     display: grid;
+    grid-template-columns: auto 1fr auto auto;
     box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567);
     border-radius: rem(15);
     margin-bottom: rem(16);
-
-    .content__icon-box,
-    .search,
-    .button__box,
-    .content__results {
-      grid-area: 1 / 1;
-    }
+    background: var(--color-light-first);
 
     .content__results {
       font: var(--fw-regular) rem(15) / #{1.46} $font-1;
       color: #f74646;
       font-weight: var(--fw-bold);
       z-index: 2;
-      place-self: center end;
-      padding-right: rem(140);
+      grid-row: 2;
+      grid-column: 1 / -1;
+      justify-self: end;
     }
 
     .content__icon-box {
       z-index: 1;
       place-self: center start;
-      padding: 0 0 0 rem(16);
+
+      padding: 0 rem(9) 0 rem(16);
+
+      img {
+        height: rem(20);
+      }
     }
 
     .search {
       font: var(--fw-regular) rem(13) / #{1.92} $font-1;
       border: none;
-      border-radius: rem(15);
-      padding: rem(18) rem(98) rem(18) rem(45);
-      overflow: visible;
 
-      box-sizing: content-box;
       &::placeholder {
+        white-space: break-spaces;
+        font: var(--fw-regular) rem(12) / #{1.92} $font-1;
+
         color: var(--color-light-fourth);
       }
     }
 
     .button__box {
-      place-self: end;
-      padding: rem(6.5) rem(7) rem(7.5) rem(0);
+      padding: rem(6.5) rem(7) rem(7.5) rem(7);
     }
   }
 
@@ -142,22 +141,29 @@ $color-hover-button-mode: #222731;
     @include container;
 
     &__search {
-      display: grid;
       margin-bottom: rem(24);
 
+      .content__results {
+        grid-row: 1;
+        grid-column: 3;
+        place-self: center end;
+      }
+
       .content__icon-box {
-        padding: 0 0 0 rem(24);
+        padding: 0 rem(24) 0 rem(24);
       }
 
       .search {
         font: var(--fw-regular) rem(18) / #{1.39} $font-1;
 
-        padding: rem(22) rem(256) rem(22) rem(80);
+        &::placeholder {
+          font: var(--fw-regular) rem(18) / #{1.39} $font-1;
+        }
       }
 
       .button__box {
         place-self: end;
-        padding: rem(9.5) rem(10) rem(9.5) rem(0);
+        padding: rem(9.5) rem(10) rem(9.5) rem(24);
       }
     }
   }
@@ -171,7 +177,8 @@ $color-hover-button-mode: #222731;
 
     .content__profile-box {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: auto 1fr 1fr;
+      column-gap: rem(20);
 
       padding: rem(32) rem(24) rem(48) rem(24);
 
@@ -281,8 +288,7 @@ $color-hover-button-mode: #222731;
     @include screen-680 {
       .content__profile-box {
         padding: rem(40);
-        column-gap: rem(37);
-        gap: rem(0);
+        column-gap: rem(41);
 
         .content__photo {
           width: rem(117);

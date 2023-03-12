@@ -27,11 +27,6 @@
 
 /* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
  */
-*:focus-visible {
-  outline: var(--color-light-third) solid 4px;
-  outline-offset: 4px;
-}
-
 ul {
   list-style: none;
 }
@@ -122,8 +117,11 @@ body.dark-mode .content__box {
   background: #1e2a47;
   box-shadow: none;
 }
+body.dark-mode .content__search {
+  background: #1e2a47 !important;
+}
 body.dark-mode .search {
-  background: #1e2a47;
+  background: #1e2a47 !important;
   color: #fff;
 }
 body.dark-mode .search::placeholder {
@@ -141,7 +139,7 @@ body.dark-mode .content__list {
 
 .btn {
   font: var(--fw-bold) 0.875rem/1.5 "Space Mono", monospace;
-  padding: 0.78125rem 0.875rem 0.78125rem 1.125rem;
+  padding: 0.78125rem 1rem 0.78125rem 1rem;
   background-color: var(--color-light-sixth);
   border-radius: 0.625rem;
   color: #ffffff;
@@ -152,8 +150,9 @@ body.dark-mode .content__list {
 .btn:hover {
   background-color: #60abff;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .btn {
+    font: var(--fw-bold) 1rem/var(--lh-button) "Space Mono", monospace;
     padding: 0.78125rem 1.4375rem 0.84375rem 1.5rem;
   }
 }
@@ -168,7 +167,7 @@ body.dark-mode .content__list {
   align-items: center;
   justify-content: space-between;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .header {
     max-width: 57.875rem;
     padding-right: 6.125rem;
@@ -194,7 +193,7 @@ body.dark-mode .content__list {
   letter-spacing: 0.15625rem;
   color: #4b6a9b;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .header {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -206,21 +205,21 @@ body.dark-mode .content__list {
     justify-content: space-between;
   }
 }
-@media (min-width: 42.5rem) and (min-width: 42.5rem) {
+@media (min-width: 37.5rem) and (min-width: 37.5rem) {
   .header {
     max-width: 57.875rem;
     padding-right: 6.125rem;
     padding-left: 6.125rem;
   }
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .header__logo {
     display: inline-block;
     font: var(--fw-bold) 1.625rem/1.5 "Space Mono", monospace;
     color: #222731;
   }
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .header__mode {
     background: none;
     border: none;
@@ -259,7 +258,7 @@ body.dark-mode .content__list {
   padding-left: 1.5rem;
   margin: 0 auto;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .content {
     max-width: 57.875rem;
     padding-right: 6.125rem;
@@ -268,73 +267,76 @@ body.dark-mode .content__list {
 }
 .content__search {
   display: grid;
+  grid-template-columns: auto 1fr auto auto;
   box-shadow: 0 1rem 1.875rem -0.625rem rgba(70, 96, 187, 0.198567);
   border-radius: 0.9375rem;
   margin-bottom: 1rem;
-}
-.content__search .content__icon-box,
-.content__search .search,
-.content__search .button__box,
-.content__search .content__results {
-  grid-area: 1/1;
+  background: var(--color-light-first);
 }
 .content__search .content__results {
   font: var(--fw-regular) 0.9375rem/1.46 "Space Mono", monospace;
   color: #f74646;
   font-weight: var(--fw-bold);
   z-index: 2;
-  place-self: center end;
-  padding-right: 8.75rem;
+  grid-row: 2;
+  grid-column: 1/-1;
+  justify-self: end;
 }
 .content__search .content__icon-box {
   z-index: 1;
   place-self: center start;
-  padding: 0 0 0 1rem;
+  padding: 0 0.5625rem 0 1rem;
+}
+.content__search .content__icon-box img {
+  height: 1.25rem;
 }
 .content__search .search {
   font: var(--fw-regular) 0.8125rem/1.92 "Space Mono", monospace;
   border: none;
-  border-radius: 0.9375rem;
-  padding: 1.125rem 6.125rem 1.125rem 2.8125rem;
-  overflow: visible;
-  box-sizing: content-box;
 }
 .content__search .search::placeholder {
+  white-space: break-spaces;
+  font: var(--fw-regular) 0.75rem/1.92 "Space Mono", monospace;
   color: var(--color-light-fourth);
 }
 .content__search .button__box {
-  place-self: end;
-  padding: 0.40625rem 0.4375rem 0.46875rem 0rem;
+  padding: 0.40625rem 0.4375rem 0.46875rem 0.4375rem;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .content {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
     margin: 0 auto;
   }
 }
-@media (min-width: 42.5rem) and (min-width: 42.5rem) {
+@media (min-width: 37.5rem) and (min-width: 37.5rem) {
   .content {
     max-width: 57.875rem;
     padding-right: 6.125rem;
     padding-left: 6.125rem;
   }
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .content__search {
-    display: grid;
     margin-bottom: 1.5rem;
   }
+  .content__search .content__results {
+    grid-row: 1;
+    grid-column: 3;
+    place-self: center end;
+  }
   .content__search .content__icon-box {
-    padding: 0 0 0 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
   }
   .content__search .search {
     font: var(--fw-regular) 1.125rem/1.39 "Space Mono", monospace;
-    padding: 1.375rem 16rem 1.375rem 5rem;
+  }
+  .content__search .search::placeholder {
+    font: var(--fw-regular) 1.125rem/1.39 "Space Mono", monospace;
   }
   .content__search .button__box {
     place-self: end;
-    padding: 0.59375rem 0.625rem 0.59375rem 0rem;
+    padding: 0.59375rem 0.625rem 0.59375rem 1.5rem;
   }
 }
 .content__box {
@@ -346,7 +348,8 @@ body.dark-mode .content__list {
 }
 .content__box .content__profile-box {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
+  column-gap: 1.25rem;
   padding: 2rem 1.5rem 3rem 1.5rem;
 }
 .content__box .content__profile-box .content__photo {
@@ -438,11 +441,10 @@ body.dark-mode .content__list {
   color: var(--color-light-fourth);
   word-break: break-all;
 }
-@media (min-width: 42.5rem) {
+@media (min-width: 37.5rem) {
   .content__box .content__profile-box {
     padding: 2.5rem;
-    column-gap: 2.3125rem;
-    gap: 0rem;
+    column-gap: 2.5625rem;
   }
   .content__box .content__profile-box .content__photo {
     width: 7.3125rem;

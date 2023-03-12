@@ -15,7 +15,7 @@
 
 // RESPOSIVE
 @mixin screen-680 {
-  @media (min-width: rem(680)) {
+  @media (min-width: rem(600)) {
     @content;
   }
 }

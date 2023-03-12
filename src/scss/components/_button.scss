@@ -5,7 +5,7 @@
 
 .btn {
   font: var(--fw-bold) rem(14) / #{1.5} $font-1;
-  padding: rem(12.5) rem(14) rem(12.5) rem(18);
+  padding: rem(12.5) rem(16) rem(12.5) rem(16);
   background-color: var(--color-light-sixth);
   border-radius: rem(10);
   color: #ffffff;
@@ -18,6 +18,8 @@
   }
 
   @include screen-680 {
+    @include font-button;
+
     padding: rem(12.5) rem(23) rem(13.5) rem(24);
   }
 }

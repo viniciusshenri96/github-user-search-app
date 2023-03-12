@@ -45,10 +45,10 @@
 /* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
  */
 
-*:focus-visible {
-  outline: var(--color-light-third) solid 4px;
-  outline-offset: 4px;
-}
+// *:focus-visible {
+//   outline: var(--color-light-third) solid 4px;
+//   outline-offset: 4px;
+// }
 
 ul {
   list-style: none;
@@ -148,8 +148,12 @@ body.dark-mode {
     box-shadow: none;
   }
 
+  .content__search {
+    background: #1e2a47 !important;
+  }
+
   .search {
-    background: #1e2a47;
+    background: #1e2a47 !important;
     color: #fff;
     &::placeholder {
       color: inherit !important;
