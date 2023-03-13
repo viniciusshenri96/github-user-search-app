@@ -5,7 +5,6 @@ export const state = {
   users: {},
   darkMode: "",
 };
-console.log(state);
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {

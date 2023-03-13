@@ -27,6 +27,11 @@
 
 /* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
  */
+*:focus-visible {
+  outline: var(--color-light-sixth) solid 2px;
+  outline-offset: 2px;
+}
+
 ul {
   list-style: none;
 }
