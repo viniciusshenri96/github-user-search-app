@@ -5,9 +5,20 @@
 
 $color-hover-button-mode: #222731;
 
-.header {
+body {
   @include container;
-  padding-top: rem(31);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.header {
+  width: 100%;
   padding-bottom: rem(35);
   display: flex;
   align-items: center;
@@ -36,8 +47,6 @@ $color-hover-button-mode: #222731;
   }
 
   @include screen-680 {
-    @include container;
-    padding-top: rem(31);
     padding-bottom: rem(35);
     display: flex;
     align-items: center;
@@ -88,9 +97,11 @@ $color-hover-button-mode: #222731;
   }
 }
 
-.content {
-  @include container;
+main {
+  width: 100%;
+}
 
+.content {
   &__search {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -138,8 +149,6 @@ $color-hover-button-mode: #222731;
   }
 
   @include screen-680 {
-    @include container;
-
     &__search {
       margin-bottom: rem(24);
 
@@ -173,8 +182,6 @@ $color-hover-button-mode: #222731;
     border-radius: rem(15);
     background-color: var(--color-light-first);
     box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567);
-    margin-bottom: rem(79);
-
     .content__profile-box {
       display: grid;
       grid-template-columns: auto 1fr 1fr;
@@ -191,6 +198,7 @@ $color-hover-button-mode: #222731;
 
       .content__info {
         grid-column: 2 / -1;
+        align-items: center;
         .content__name {
           @include font-m;
           font-weight: var(--fw-bold);

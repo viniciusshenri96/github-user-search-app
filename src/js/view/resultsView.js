@@ -28,7 +28,9 @@ class resultsView {
             <p class="content__date">Joined ${dateGit}</p>
           </div>
           <div class="content__bio-box">
-            <p class="content__bio" data-biography>${data.bio}</p>
+            <p class="content__bio" data-biography>${
+              data.bio ? data.bio : ""
+            }</p>
           </div>
 
           <div class="content__datails">
@@ -192,3 +194,4 @@ class resultsView {
 }
 
 export default new resultsView();
+// localStorage.clear();
