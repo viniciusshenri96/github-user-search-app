@@ -1,3 +1,6 @@
+import icons1 from "url:../../img/icon-moon.svg"; // assim que funciona a importação no parcel 2 para quaisquer imagem, video ou arquivo de som, precisamos escrever URL
+import icons2 from "url:../../img/icon-sun.svg"; // assim que funciona a importação no parcel 2 para quaisquer imagem, video ou arquivo de som, precisamos escrever URL
+
 class resultsView {
   _parentEl = document.querySelector(".content__box");
   _parentForm = document.querySelector(".content__search");
@@ -14,7 +17,6 @@ class resultsView {
 
     if (data.query) {
       this._parentForm.querySelector(".search").value = data.query;
-      // inputvalue.value = data.query;
     }
 
     const markup = `
@@ -173,11 +175,11 @@ class resultsView {
   handlerDarkMode(theme) {
     this._text.textContent = theme;
     if (this._text.textContent === "Dark") {
-      this._propsDarkMode("Light", "#FFF", `./src/img/icon-sun.svg`);
+      this._propsDarkMode("Light", "#FFF", `${icons2}`);
 
       document.body.classList.add("dark-mode");
     } else {
-      this._propsDarkMode("Dark", "#4b6a9b", `./src/img/icon-moon.svg`);
+      this._propsDarkMode("Dark", "#4b6a9b", `${icons1}`);
 
       document.body.classList.remove("dark-mode");
     }

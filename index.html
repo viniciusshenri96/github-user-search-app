@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description"
+    content="In this project, you'll use the GitHub users API to pull profile data and display it. It's a great challenge if you're looking to practice working with a 3rd-party API.">
   <link rel="icon" type="image/png" sizes="32x32" href="./src/img/favicon-32x32.png">
-  <link rel="stylesheet" href="src/css/style.css" media="all">
+  <link rel="stylesheet" href="src/scss/app.scss" media="all">
 
   <title>GitHub user search app</title>
 
@@ -26,7 +27,8 @@
 
   <main>
     <article class="content">
-      <form action="" class="content__search">
+      <h1 class="sr-only">teste</h1>
+      <form action="/" class="content__search">
         <span class="content__icon-box">
           <img class="content__icon" src="./src/img/icon-search.svg" alt="">
         </span>
@@ -40,10 +42,11 @@
 
 
       <section class="content__box">
+        <!-- <h1 class="sr-only">teste</h1> -->
         <div class="content__profile-box">
           <img class="content__photo" src="src/img/user-photo.jpg" alt="github user photo">
           <div class="content__info">
-            <h1 class="content__name">The Octocat</h1>
+            <h2 class="content__name">The Octocat</h2>
             <p class="content__user">@octocat</p>
             <p class="content__date">Joined 25 Jan 2011</p>
           </div>

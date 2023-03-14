@@ -1,6 +1,9 @@
 import * as model from "./model.js";
 import resultsView from "./view/resultsView.js";
 
+import "regenerator-runtime/runtime";
+import "core-js/stable";
+
 const controleResults = async function () {
   try {
     const query = resultsView.getQuery();
