@@ -1,4 +1,6 @@
 @use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+@use "../core/variables" as *;
 
 // VARIABLES CSS
 :root {
@@ -45,9 +47,10 @@
 /* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
  */
 
+*:focus,
 *:focus-visible {
-  outline: var(--color-light-sixth) solid 2px;
-  outline-offset: 2px;
+  outline: var(--color-light-sixth) groove 6px;
+  outline-offset: 6px;
 }
 
 ul {
@@ -116,21 +119,20 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
-  // transition: all 0.4s;
-  transition: all 0.5s ease-out;
+  transition: all 0.4s;
+
+  @include container;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: rem(24);
+  padding-bottom: rem(24);
 }
 
 body.dark-mode {
-  :root {
-    // DARK MODE COLORS
-    --color-dark-first: #ffffff;
-    --color-dark-second: #141d2f;
-    --color-dark-third: #1e2a47;
-    --color-dark-fourth: #0079ff;
-
-    --color-light-first: #1e2a47;
-  }
-
   background: #141d2f;
   transition: all 0.5s ease-out;
 
@@ -139,7 +141,7 @@ body.dark-mode {
   }
 
   .header__logo {
-    color: #ffffff !important;
+    color: #ffffff;
   }
 
   .content__box {
@@ -148,14 +150,15 @@ body.dark-mode {
   }
 
   .content__search {
-    background: #1e2a47 !important;
+    background: #1e2a47;
   }
 
   .search {
-    background: #1e2a47 !important;
+    color: #ffffff;
+    background: #1e2a47;
 
     &::placeholder {
-      color: inherit !important;
+      color: inherit;
     }
   }
 
@@ -168,57 +171,10 @@ body.dark-mode {
   }
 
   .content__list {
-    background-color: #141d2f !important;
+    background: #141d2f !important;
+  }
+
+  .content__results {
+    color: #f74646 !important;
   }
 }
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     // DARK MODE COLORS
-//     --color-dark-first: #ffffff;
-//     --color-dark-second: #141d2f;
-//     --color-dark-third: #1e2a47;
-//     --color-dark-fourth: #0079ff;
-
-//     --color-light-first: #1e2a47;
-//   }
-
-//   * {
-//     color: var(--color-dark-first) !important;
-//   }
-
-//   body {
-//     background: var(--color-dark-second);
-
-//     .header__logo,
-//     .header__mode-text,
-//     .moon path {
-//       fill: var(--color-dark-first);
-//       color: var(--color-dark-first);
-//     }
-
-//     .content__box {
-//       box-shadow: none;
-//     }
-
-//     .search {
-//       background: var(--color-light-first);
-//       color: #fff;
-//       &::placeholder {
-//         color: inherit !important;
-//       }
-//     }
-
-//     svg path {
-//       fill: var(--color-dark-first);
-//     }
-
-//     .content__user {
-//       color: var(--color-dark-fourth) !important;
-//     }
-
-//     .content__list {
-//       background-color: var(--color-dark-second) !important;
-//     }
-//   }
-// }

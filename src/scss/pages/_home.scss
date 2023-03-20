@@ -5,18 +5,6 @@
 
 $color-hover-button-mode: #222731;
 
-body {
-  @include container;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
 .header {
   width: 100%;
   padding-bottom: rem(35);
@@ -86,7 +74,7 @@ main {
 
 .content {
   &__box {
-    animation: identifier 1s forwards;
+    animation: bounce-top 1s forwards;
   }
   &__search {
     display: grid;
@@ -96,7 +84,7 @@ main {
     margin-bottom: rem(16);
     background: var(--color-light-first);
 
-    animation: identifier 1s forwards;
+    animation: bounce-top 1s forwards;
 
     .content__results {
       font: var(--fw-regular) rem(15) / #{1.46} $font-1;
@@ -266,10 +254,29 @@ main {
             z-index: 2;
             opacity: 0.5;
             cursor: no-drop;
+            display: none;
           }
 
           &:nth-child(1) {
             gap: rem(19);
+          }
+          &:nth-child(2) {
+            .content__details-subtitle {
+              position: relative;
+              max-width: max-content;
+              &:hover::after {
+                content: "";
+                width: 100%;
+                height: rem(1);
+                background: currentColor;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+          }
+          &:nth-child(3) {
+            opacity: 0.5;
           }
 
           .content__details-subtitle {
@@ -344,6 +351,7 @@ main {
 
         .content__details-plus {
           grid-template-columns: 1fr 1fr;
+
           gap: rem(16);
 
           .content__details-item {
@@ -386,7 +394,6 @@ main {
           display: grid;
           align-self: start;
           grid-template-columns: 1fr 1fr;
-          justify-content: space-between;
 
           .content__name {
             font: var(--fw-bold) rem(26) / #{1.5} $font-1;
@@ -435,8 +442,10 @@ main {
         }
 
         .content__details-plus {
-          grid-template-columns: 1fr 1fr;
-          gap: rem(16);
+          grid-template-columns: 1fr auto;
+          justify-items: start;
+
+          column-gap: rem(62);
 
           .content__details-item {
             gap: rem(13);
@@ -455,13 +464,42 @@ main {
   }
 }
 
-@keyframes identifier {
-  from {
-    opacity: 0;
-    transform: translateY(-180px) rotate(45deg);
-  }
-  to {
+@keyframes bounce-top {
+  0% {
+    transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 1;
-    transform: translateY(0) rotate(0);
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
   }
 }

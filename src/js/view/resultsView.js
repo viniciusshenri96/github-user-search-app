@@ -1,5 +1,5 @@
-import icons1 from "url:../../img/icon-moon.svg"; // assim que funciona a importação no parcel 2 para quaisquer imagem, video ou arquivo de som, precisamos escrever URL
-import icons2 from "url:../../img/icon-sun.svg"; // assim que funciona a importação no parcel 2 para quaisquer imagem, video ou arquivo de som, precisamos escrever URL
+import icons1 from "url:../../img/icon-moon.svg";
+import icons2 from "url:../../img/icon-sun.svg";
 
 class resultsView {
   _parentEl = document.querySelector(".content__box");
@@ -9,7 +9,9 @@ class resultsView {
   _text = document.querySelector(".header__mode-text");
   _icon = document.querySelector("img");
   render(data) {
+    if (Object.keys(data).length === 0) return;
     const dateCreateGitHub = new Date(data.created_at);
+
     const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
       "en-US",
       { month: "short" }
@@ -81,10 +83,12 @@ class resultsView {
                       d="M13.439 13.75a.401.401 0 00.006-.003c.659-1.204.788-2.586.48-3.933l-.002.002-.001-.001a5.434 5.434 0 00-2.19-3.124.3.3 0 00-.333.015c-.553.448-1.095 1.021-1.452 1.754a.243.243 0 00.096.317c.415.24.79.593 1.04 1.061h.001c.196.33.388.958.263 1.632-.116.894-1.019 1.714-1.736 2.453-.546.559-1.935 1.974-2.49 2.542a2.6 2.6 0 01-3.666.037 2.6 2.6 0 01-.038-3.666l1.521-1.564A.266.266 0 005 11.004c-.338-1.036-.43-2.432-.217-3.51.006-.03-.031-.049-.053-.027l-3.179 3.245c-2.083 2.126-2.066 5.588.04 7.693 2.125 2.083 5.57 2.048 7.653-.078.723-.81 3.821-3.678 4.195-4.577z" />
                   </g>
                 </svg>
-                <a class="content__details-subtitle" href="${
-                  data.blog ? data.blog : ""
-                }">${data.blog ? data.blog : "Not Available"}</a>
-
+                <a ${
+                  data.blog ? "" : 'tabindex = "-1"'
+                }  class="content__details-subtitle" href="${
+      data.blog ? data.blog : ""
+    }">${data.blog ? data.blog : "Not Available"}</a>
+               
                 <div class="block" ${
                   data.blog ? "style='display:none'" : "style='display:block'"
                 }></div>
@@ -196,4 +200,3 @@ class resultsView {
 }
 
 export default new resultsView();
-// localStorage.clear();
