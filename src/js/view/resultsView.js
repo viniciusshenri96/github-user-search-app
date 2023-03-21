@@ -12,9 +12,11 @@ class resultsView {
     if (Object.keys(data).length === 0) return;
     const dateCreateGitHub = new Date(data.created_at);
 
-    const dateGit = `${dateCreateGitHub.getDay()} ${new Intl.DateTimeFormat(
+    const dateGit = `${dateCreateGitHub.getDate()} ${new Intl.DateTimeFormat(
       "en-US",
-      { month: "short" }
+      {
+        month: "short",
+      }
     ).format(dateCreateGitHub)} ${dateCreateGitHub.getFullYear()}`;
 
     if (data.query) {
@@ -200,3 +202,4 @@ class resultsView {
 }
 
 export default new resultsView();
+// localStorage.clear();
