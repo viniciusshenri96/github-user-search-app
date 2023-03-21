@@ -73,8 +73,9 @@ main {
 }
 
 .content {
+  animation: scale-up-ver-top 1s forwards;
   &__box {
-    animation: bounce-top 1s forwards;
+    // animation: bounce-top 1s forwards;
   }
   &__search {
     display: grid;
@@ -84,7 +85,7 @@ main {
     margin-bottom: rem(16);
     background: var(--color-light-first);
 
-    animation: bounce-top 1s forwards;
+    // animation: bounce-top 1s forwards;
 
     .content__results {
       font: var(--fw-regular) rem(15) / #{1.46} $font-1;
@@ -158,6 +159,7 @@ main {
     border-radius: rem(15);
     background-color: var(--color-light-first);
     box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567);
+
     .content__profile-box {
       display: grid;
       grid-template-columns: auto 1fr 1fr;
@@ -170,6 +172,7 @@ main {
         height: rem(70);
         margin-bottom: rem(33);
         border-radius: 100%;
+        animation: bounce-in-top 1.5s forwards;
       }
 
       .content__info {
@@ -179,6 +182,7 @@ main {
           @include font-m;
           font-weight: var(--fw-bold);
           color: var(--color-light-third);
+          animation: focus-in-expand 2s forwards;
         }
         .content__user {
           @include font-s;
@@ -208,7 +212,9 @@ main {
 
       .content__datails {
         grid-column: 1 / -1;
+
         .content__list {
+          // animation: scale-up-hor-left 2s forwards;
           margin-bottom: rem(24);
           display: flex;
           justify-content: space-between;
@@ -464,42 +470,86 @@ main {
   }
 }
 
-@keyframes bounce-top {
+@keyframes focus-in-expand {
   0% {
-    transform: translateY(-45px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    transform: translateY(-24px);
-    animation-timing-function: ease-in;
-  }
-  65% {
-    transform: translateY(-12px);
-    animation-timing-function: ease-in;
-  }
-  82% {
-    transform: translateY(-6px);
-    animation-timing-function: ease-in;
-  }
-  93% {
-    transform: translateY(-4px);
-    animation-timing-function: ease-in;
-  }
-  25%,
-  55%,
-  75%,
-  87% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-scale-down-diag-1 {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
     opacity: 1;
+  }
+  55% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: scale(0.84);
+    transform: scale(0.84);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  89% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
 }

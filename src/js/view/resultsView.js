@@ -202,4 +202,4 @@ class resultsView {
 }
 
 export default new resultsView();
-// localStorage.clear();
+localStorage.clear();
