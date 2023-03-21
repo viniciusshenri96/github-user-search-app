@@ -8,6 +8,13 @@ class resultsView {
 
   _text = document.querySelector(".header__mode-text");
   _icon = document.querySelector("img");
+
+  /**
+   * Render the received object to the DOM
+   * @param {Object} data to be rendered
+   * @this { Object } resultsView instance
+   * * @author Vinicius Henrique
+   */
   render(data) {
     if (Object.keys(data).length === 0) return;
     const dateCreateGitHub = new Date(data.created_at);
@@ -151,6 +158,7 @@ class resultsView {
     return query;
   }
 
+  //  Publish–subscribe pattern
   addHandleSeach(handler) {
     this._parentForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -202,4 +210,3 @@ class resultsView {
 }
 
 export default new resultsView();
-localStorage.clear();

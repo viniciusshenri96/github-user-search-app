@@ -15,7 +15,7 @@ $color-hover-button-mode: #222731;
   &__logo {
     display: inline-block;
     font: var(--fw-bold) rem(26) / #{1.5} $font-1;
-    color: #222731;
+    color: $color-hover-button-mode;
   }
 
   &__mode {
@@ -35,31 +35,7 @@ $color-hover-button-mode: #222731;
   }
 
   @include screen-680 {
-    padding-bottom: rem(35);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &__logo {
-      display: inline-block;
-      font: var(--fw-bold) rem(26) / #{1.5} $font-1;
-      color: #222731;
-    }
-
     &__mode {
-      background: none;
-      border: none;
-      display: flex;
-      gap: rem(16);
-
-      &-text {
-        @include font-s;
-        text-transform: uppercase;
-        font-weight: var(--fw-bold);
-        letter-spacing: rem(2.5);
-        color: #4b6a9b;
-      }
-
       img {
         width: rem(20);
         height: rem(20);
@@ -74,9 +50,7 @@ main {
 
 .content {
   animation: scale-up-ver-top 1s forwards;
-  &__box {
-    // animation: bounce-top 1s forwards;
-  }
+
   &__search {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -84,8 +58,6 @@ main {
     border-radius: rem(15);
     margin-bottom: rem(16);
     background: var(--color-light-first);
-
-    // animation: bounce-top 1s forwards;
 
     .content__results {
       font: var(--fw-regular) rem(15) / #{1.46} $font-1;
@@ -155,7 +127,6 @@ main {
   }
 
   &__box {
-    max-width: 100%;
     border-radius: rem(15);
     background-color: var(--color-light-first);
     box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567);
@@ -182,7 +153,7 @@ main {
           @include font-m;
           font-weight: var(--fw-bold);
           color: var(--color-light-third);
-          animation: focus-in-expand 2s forwards;
+          animation: focus-text 2s forwards;
         }
         .content__user {
           @include font-s;
@@ -214,7 +185,6 @@ main {
         grid-column: 1 / -1;
 
         .content__list {
-          // animation: scale-up-hor-left 2s forwards;
           margin-bottom: rem(24);
           display: flex;
           justify-content: space-between;
@@ -448,8 +418,7 @@ main {
         }
 
         .content__details-plus {
-          grid-template-columns: 1fr auto;
-          justify-items: start;
+          grid-template-columns: auto 1fr;
 
           column-gap: rem(62);
 
@@ -470,86 +439,52 @@ main {
   }
 }
 
-@keyframes focus-in-expand {
+@keyframes focus-text {
   0% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(12px);
+    letter-spacing: -0.5rem;
     filter: blur(12px);
     opacity: 0;
   }
   100% {
-    -webkit-filter: blur(0px);
     filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes rotate-scale-down-diag-1 {
-  0% {
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
     opacity: 1;
   }
 }
 
 @keyframes bounce-in-top {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
   }
   38% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
     opacity: 1;
   }
   55% {
-    -webkit-transform: scale(0.7);
     transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
   72% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
   81% {
-    -webkit-transform: scale(0.84);
     transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
   89% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
   95% {
-    -webkit-transform: scale(0.95);
     transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
+
     animation-timing-function: ease-in;
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
 }

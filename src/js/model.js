@@ -43,6 +43,7 @@ export const searchUserGitHub = async function (query) {
 
     return data;
   } catch (err) {
+    // It's throwing the error again, so I can use it in controller.js
     throw err;
   }
 };

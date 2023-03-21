@@ -15,7 +15,6 @@ const controleResults = async function () {
 
     resultsView.clearMessage();
   } catch (err) {
-    console.log(err);
     resultsView.errorMessage();
   }
 };
