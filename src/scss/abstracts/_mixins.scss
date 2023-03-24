@@ -1,7 +1,6 @@
 @use "functions" as *;
 
 @mixin container {
-  // max-width: rem(327 + 48);
   padding-right: rem(24);
   padding-left: rem(24);
 

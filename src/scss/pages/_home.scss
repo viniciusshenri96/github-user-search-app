@@ -13,7 +13,6 @@ $color-hover-button-mode: #222731;
   justify-content: space-between;
 
   &__logo {
-    display: inline-block;
     font: var(--fw-bold) rem(26) / #{1.5} $font-1;
     color: $color-hover-button-mode;
   }
@@ -24,13 +23,26 @@ $color-hover-button-mode: #222731;
     display: flex;
     gap: rem(16);
     cursor: pointer;
+    color: var(--color-light-fifth);
+    transition: 0.4s ease-in-out;
+
+    svg path {
+      transition: 0.4s ease-in-out;
+    }
 
     &-text {
       @include font-s;
       text-transform: uppercase;
       font-weight: var(--fw-bold);
       letter-spacing: rem(2.5);
-      color: #4b6a9b;
+    }
+
+    &:hover {
+      color: $color-hover-button-mode;
+
+      svg path {
+        fill: $color-hover-button-mode;
+      }
     }
   }
 
@@ -327,7 +339,6 @@ main {
 
         .content__details-plus {
           grid-template-columns: 1fr 1fr;
-
           gap: rem(16);
 
           .content__details-item {
@@ -418,8 +429,6 @@ main {
         }
 
         .content__details-plus {
-          grid-template-columns: auto 1fr;
-
           column-gap: rem(62);
 
           .content__details-item {
@@ -486,5 +495,105 @@ main {
   100% {
     transform: scale(1);
     animation-timing-function: ease-out;
+  }
+}
+
+// DARK MODE
+:root {
+  // DARK MODE COLORS
+  --color-dark-first: #ffffff;
+  --color-dark-second: #90a4d4;
+  --color-dark-third: #1e2a47;
+  --color-dark-fourth: #141d2f;
+}
+
+html.dark-mode {
+  body {
+    background: var(--color-dark-fourth);
+    transition: all 0.5s ease-out;
+  }
+
+  .header {
+    .header__logo {
+      color: var(--color-dark-first);
+    }
+
+    .header__mode {
+      color: var(--color-dark-first);
+
+      &:hover {
+        color: var(--color-dark-second);
+
+        .icon-dark {
+          g path {
+            fill: var(--color-dark-second);
+          }
+        }
+      }
+    }
+  }
+
+  .content__search {
+    background: var(--color-dark-third);
+    box-shadow: none;
+
+    .search {
+      color: var(--color-dark-first);
+      background: var(--color-dark-third);
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+  }
+
+  .content__box {
+    background: var(--color-dark-third);
+    box-shadow: none;
+    .content__profile-box {
+      .content__info {
+        .content__name {
+          color: var(--color-dark-first);
+        }
+
+        .content__date {
+          color: var(--color-dark-first);
+        }
+      }
+
+      .content__bio-box {
+        .content__bio {
+          color: var(--color-dark-first);
+          opacity: 0.75;
+        }
+      }
+
+      .content__datails {
+        .content__list {
+          background-color: var(--color-dark-fourth);
+
+          .content__list-item {
+            .content__subtitle {
+              color: var(--color-dark-first);
+            }
+
+            .content__desc {
+              color: var(--color-dark-first);
+            }
+          }
+        }
+      }
+
+      .content__details-plus {
+        .content__details-item {
+          svg path {
+            fill: var(--color-dark-first);
+          }
+          .content__details-subtitle {
+            color: var(--color-dark-first);
+          }
+        }
+      }
+    }
   }
 }

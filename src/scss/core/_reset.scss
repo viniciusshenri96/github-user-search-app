@@ -12,12 +12,6 @@
   --color-light-fifth: #697c9a;
   --color-light-sixth: #0079ff;
 
-  // // DARK MODE COLORS
-  // --color-dark-first: #ffffff;
-  // --color-dark-second: #141d2f;
-  // --color-dark-third: #1e2a47;
-  // --color-dark-fourth: #0079ff;
-
   // title
   --lh-xl: 1.46;
   --lh-l: 1.5;
@@ -130,51 +124,4 @@ body {
   min-height: 100vh;
   padding-top: rem(24);
   padding-bottom: rem(24);
-}
-
-body.dark-mode {
-  background: #141d2f;
-  transition: all 0.5s ease-out;
-
-  * {
-    color: #ffffff !important;
-  }
-
-  .header__logo {
-    color: #ffffff;
-  }
-
-  .content__box {
-    background: #1e2a47;
-    box-shadow: none;
-  }
-
-  .content__search {
-    background: #1e2a47;
-  }
-
-  .search {
-    color: #ffffff;
-    background: #1e2a47;
-
-    &::placeholder {
-      color: inherit;
-    }
-  }
-
-  svg path {
-    fill: #ffffff;
-  }
-
-  .content__user {
-    color: #0079ff !important;
-  }
-
-  .content__list {
-    background: #141d2f !important;
-  }
-
-  .content__results {
-    color: #f74646 !important;
-  }
 }
